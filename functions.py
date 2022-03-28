@@ -18,7 +18,13 @@ def topUsers(data):
     return users[:10]
 
 def topDays(data):
-    pass
+    days = []
+    for tweet in data:
+        day = tweet['date'].split("T")[0]
+        days.append(day)
+    days = [[x,days.count(x)] for x in set(days)]
+    days.sort(key=lambda x: x[1], reverse=True)
+    return days[:10]
 
 
 
