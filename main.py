@@ -15,13 +15,13 @@ if __name__ == "__main__":
 
         if usr != "5":
             if usr == "1":
-                functions.topTweets(data)
+                print(functions.topTweets(data))
             elif usr == "2":
-                functions.topUsers(data)
+                print(functions.topUsers(data))
             elif usr == "3":
-                functions.topDays(data)
+                print(functions.topDays(data))
             elif usr == "4":
-                functions.topHashtags(data)
+                print(functions.topHashtags(data))
             else:
                 print("Input invalido\n")
         else:
