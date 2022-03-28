@@ -27,6 +27,12 @@ def topDays(data):
     return days[:10]
 
 
-
 def topHashtags(data):
-    pass
+    hashtags = []
+    for tweet in data:
+        tweetHashtags = re.findall(r"#(\w+)", tweet['content'])
+        for hashtag in tweetHashtags:
+            hashtags.append(hashtag)
+    hashtags = [[x,hashtags.count(x)] for x in set(hashtags)]
+    hashtags.sort(key=lambda x: x[1], reverse=True)
+    return hashtags[:10]
