@@ -1,11 +1,13 @@
 import json
 import functions
 
+print("Cargando dataset...")
+
 data = [json.loads(line) for line in open('data/farmers-protest-tweets-2021-03-5.json', 'r')]
 
 if __name__ == "__main__":
     while True:
-        msg = """Seleccione funcion a ejecutar:\n
+        msg = """\nSeleccione funcion a ejecutar:\n
         1. Los top 10 tweets más retweeted\n
         2. Los top 10 usuarios en función a la cantidad de tweets que emitieron\n
         3. Los top 10 días donde hay más tweets\n
