@@ -1,5 +1,9 @@
+import operator
+
 def topTweets(data):
-    pass
+    data.sort(key=operator.itemgetter('retweetCount'), reverse=True)
+    return data[:10]
+
 
 def topUsers(data):
     pass
